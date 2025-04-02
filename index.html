@@ -91,125 +91,9 @@
                                                             </tbody>
                                                         </table>
                                                     </div>
-                                                    <div class="select-time">
-                                                        <table id="input-table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th colspan="2">Select Time Window</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Starting Year</td>
-                                                                    <td>Ending Year</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><input type="date" id="begin-input" value="2018-01-01"></td>
-                                                                    <td><input type="date" id="end-input" value="2020-12-31"></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-
-                                                <div id="separator-div" class="separator hidden"></div>
-
-                                                <div class="input-checkbox hidden">
-                                                    
-                                                    <div class="data-exclusion">
-
-                                                        <h2>Time Window for Data Exclusions (Season, Single month, Single day, etc...)</h2>
-
-                                                        <div class="checkbox">
-
-                                                            <div>
-                                                                <input type="checkbox" id="exclusion-checkbox">
-                                                                <label>EXCLUSION</label>
-                                                            </div>
-
-                                                            <div>
-                                                                <input type="checkbox" id="no-exclusion-checkbox" checked>
-                                                                <label>No Data Exclusion (Default)</label>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="exclusion-settings hidden">
-
-                                                        <div class="checkbox">
-
-                                                            <div class="single-month-day-only">
-
-                                                                <div class="month-day-options">
-
-                                                                    <div class="single-month">
-                                                                        <input type="checkbox" id="single-month-checkbox">
-                                                                        <label>Single Month Only</label>
-                                                                    </div>
-
-                                                                    <div class="single-day">
-                                                                        <input type="checkbox" id="single-day-checkbox">
-                                                                        <label>Single Day Only</label>
-                                                                    </div>
-
-                                                                </div>
-
-                                                                <div class="single-month-day-input hidden">
-                                                                    <input type="text" id="single-month-day-txbox">
-                                                                    <span>==> Month (MM) or Day (DD)</span>
-                                                                </div>
-                                                                
-                                                            </div>
-
-                                                            <div class="specific-time-window-only">
-
-                                                                <div class="specific-time-window">
-                                                                    <input type="checkbox" id="specific-time-window-checkbox">
-                                                                    <label>Specific Time Window Only</label>
-                                                                </div>
-
-                                                                <div class="specific-time-window-input hidden">
-                                                                    <div>
-                                                                        <label>From:</label>
-                                                                        <input type="text" id="time-window-from-checkbox">
-                                                                    </div>
-                                                                    
-                                                                    <div>
-                                                                        <label>To:</label>
-                                                                        <input type="text" id="time-window-to-checkbox">
-                                                                    </div>
-                                                                    
-                                                                    <span>==> Month-Day (MM-DD)</span>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                    <div class="exceedance-settings hidden">
-
-                                                        <div class="exceedance-level">
-                                                            <label>Exceedance Level:</label>
-                                                            <input type="text" id="exceedance-level-txtbox">
-                                                        </div>
-
-                                                        <div class="exceedance-type">
-                                                            <label>Exceedance Type:</label>
-                                                            <select id="exceedance-type-dropbox">
-                                                                <option value="ABOVE">ABOVE</option>
-                                                                <option value="BELOW">BELOW</option>
-                                                            </select>
-                                                        </div>
-
-                                                    </div>
                                                     
                                                 </div>
 
-                                                </div>
 
                                                 <div id="buttons-div">
 
@@ -268,38 +152,69 @@
                                                 </div>
                                             </div>
 
+                                            <div id="progress-bar-div" class="hidden">
+                                                <div id="progress-bar">
+                                                    <div id="progress"></div>
+                                                </div>
+                                                <label class="progress-bar-text">Progress Bar... (50%)</label>
+                                            </div>
+
                                             <div id="results" class="hidden">
 
-                                                <div class="results-info">
-                                                    <p class="top"></p>
-                                                    <p class="bottom"></p>
-                                                </div>
-
-                                                <div class="tables">
-                                                    <table id="by-year-table">
+                                                <div class="max-tables">
+                                                    <table id="by-year-max-table">
                                                         <thead>
                                                             <tr>
-                                                                <th colspan="2">Exceedance Data By Year (Newest to Oldest)</th>
+                                                                <th colspan="2">Yearly Maximum Values for POR</th>
                                                             </tr>
                                                             <tr>
-                                                                <th>Water Level</th>
                                                                 <th>Date</th>
+                                                                <th>Level</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="by-year-table-body"></tbody>
+                                                        <tbody id="by-year-max-table-body"></tbody>
                                                     </table>
     
-                                                    <table id="magnitude-table">
+                                                    <table id="by-stage-max-table">
                                                         <thead>
                                                             <tr>
-                                                                <th colspan="2">Exceedance Data By Magnitude (Largest to Smallest)</th>
+                                                                <th colspan="2">Maximum Values By Descending Values for POR</th>
                                                             </tr>
                                                             <tr>
-                                                                <th>Water Level</th>
                                                                 <th>Date</th>
+                                                                <th>Level</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="magnitude-table-body"></tr>
+                                                        <tbody id="by-stage-max-table-body"></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="min-tables">
+                                                    <table id="by-year-min-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2">Yearly Minimum Values for POR</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Level</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="by-year-min-table-body"></tbody>
+                                                    </table>
+    
+                                                    <table id="by-stage-min-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="2">Minimum Values By Ascending Values for POR</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Level</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="by-stage-min-table-body"></tr>
                                                         </tbody>
                                                     </table>
                                                 </div>

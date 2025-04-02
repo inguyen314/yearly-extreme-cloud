@@ -363,197 +363,107 @@
     font-size: 1em;
 }
 
-/* ============ CHECK BOX ================*/
-input[type="checkbox"] {
-    cursor: pointer;
-}
-
-/* ============= SETTINGS ================*/
-.input-checkbox.hidden {
+/* PROGRESS BAR */
+#progress-bar-div.hidden {
     display: none;
 }
 
-.input-checkbox {
+#progress-bar-div {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
-    padding: 1.5em;
-    margin-top: 0.5em;
-    box-shadow: var(--shadow-box);
-}
-
-.input-checkbox h2 {
-    font-size: 1.2em;
-    color: var(--font-color-2);
-}
-
-/* Data Exclusion */
-.data-exclusion {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.data-exclusion .checkbox {
-    display: flex;
-    gap: 2em;
-}
-
-.data-exclusion .checkbox div {
-    display: flex;
-    gap: 0.5em;
-}
-
-/* Time Window */
-.exclusion-settings.hidden {
-    display: none;
-}
-
-.exclusion-settings {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5em;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    background-color: var(--time-window-color);
-    border-radius: 1em;
-    font-weight: bold;
-    color: black;
+    gap: 1em;
+    margin-top: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 5em 20em;
 }
 
-.exclusion-settings .checkbox {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+#progress-bar {
+    width: 100%; 
+    background: #ccc; 
+    border: 0.25em solid black;
+    height: 1.75em;
+    border-radius: 0.5em;
 }
 
-.exclusion-settings .single-month-day-only {
-    display: flex;
-    gap: 5em;
-}
-
-.exclusion-settings .single-month-day-only .month-day-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.exclusion-settings .single-month-day-only .single-month-day-input.hidden {
-    display: none;
-}
-
-.exclusion-settings .single-month-day-only .single-month-day-input {
+#progress {
+    width: 0%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    background: var(--progress-bar-color); 
+    border-radius: 0.25em;
+    height: 100%;
+    font-weight: bold;
+    color: #fff;
 }
 
-#single-month-day-txbox {
-    width: 6em;
-    text-align: center;
-}
-
-.exclusion-settings .specific-time-window-only {
-    display: flex;
-    gap: 5em;
-}
-
-.exclusion-settings .specific-time-window-only .specific-time-window-input.hidden {
-    display: none;
-}
-
-.exclusion-settings .specific-time-window-only .specific-time-window-input {
-    display: flex;
-}
-
-.exclusion-settings .specific-time-window-only .specific-time-window-input div {
-    display: flex;
-}
-
-.exclusion-settings .specific-time-window-only .specific-time-window-input div input {
-    width: 6em;
-    margin: 0em 1em 0em 0.5em;
-    text-align: center;
-}
-
-/* ========= EXCEEDANCE SETTINGS =========*/
-.input-checkbox .exceedance-settings {
-    display: flex;
-    flex-direction: column;
-    padding: 0.75em;
-    gap: 1em;
-    border-radius: 1em;
-    background: var(--time-window-color);
-}
-
-.exceedance-settings .exceedance-level,
-.exceedance-settings .exceedance-type {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5em;
-}
-
-.exceedance-settings .exceedance-level label,
-.exceedance-settings .exceedance-type label {
+#progress-bar-div .progress-bar-text{
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-.exceedance-settings .exceedance-level input {
-    width: 3em;
-    text-align: center;
-}
-
-.exceedance-settings .exceedance-type select {
-    width: 6em;
-}
-
 /* ========= RESULT INFO TEXT ============*/
-#results .results-info {
+#results {
     display: flex;
-    flex-direction: column;
-    border-radius: 1em;
-    background: var(--result-window-color);
-    gap: 1em;
-    padding: 2em;
-    margin: 2em;
-    font-size: 1.2em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2em
 }
 
-#results .results-info p {
-    margin: 0;
-    padding: 0;
+#results .max-tables,
+#results .min-tables {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
 }
+
 
 /* =============== TABLES ================*/
-#by-year-table,
-#magnitude-table {
+#by-year-max-table,
+#by-stage-max-table,
+#by-year-min-table,
+#by-stage-min-table {
     text-align: center;
 }
 
-#by-year-table thead,
-#magnitude-table thead {
+#by-year-max-table thead,
+#by-stage-max-table thead,
+#by-year-min-table thead,
+#by-stage-min-table thead {
     background: var(--table-header-color);
     color: white;
 }
 
-#by-year-table thead tr:nth-child(1) th,
-#magnitude-table thead tr:nth-child(1) th {
+#by-year-max-table thead tr:nth-child(1) th,
+#by-stage-max-table thead tr:nth-child(1) th,
+#by-year-min-table thead tr:nth-child(1) th,
+#by-stage-min-table thead tr:nth-child(1) th {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }
 
-#by-year-table thead th,
-#magnitude-table thead th {
+#by-year-max-table thead th,
+#by-stage-max-table thead th,
+#by-year-min-table thead th,
+#by-stage-min-table thead th {
     padding: 0.5em 1em;
 }
 
-#by-year-table tbody tr:nth-child(odd),
-#magnitude-table tbody tr:nth-child(odd) {
+#by-year-max-table tbody tr:nth-child(odd),
+#by-stage-max-table tbody tr:nth-child(odd),
+#by-year-min-table tbody tr:nth-child(odd),
+#by-stage-min-table tbody tr:nth-child(odd) {
     background: var(--table-body-odd-color);
 }
 
-#by-year-table tbody tr:nth-child(even),
-#magnitude-table tbody tr:nth-child(even) {
+#by-year-max-table tbody tr:nth-child(even),
+#by-stage-max-table tbody tr:nth-child(even),
+#by-year-min-table tbody tr:nth-child(even),
+#by-stage-min-table tbody tr:nth-child(even) {
     background: var(--table-body-even-color);
 }
 
