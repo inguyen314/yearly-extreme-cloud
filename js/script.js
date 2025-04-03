@@ -58,7 +58,7 @@ const conlog = params.get("log") ? params.get("log") : "false";
 let isDeveloper = params.get("developer") ? params.get("developer").toLowerCase() : null;
 
 // Manually set up Maintenance
-let isMaintenance = true;
+let isMaintenance = false;
 
 if (isDeveloper === "true"){
     isMaintenance = false;
